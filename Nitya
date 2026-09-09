@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitya Book Publication</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#111827,#312e81);
+  color:white;
+  min-height:100vh;
+}
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:25px 18px;
+}
+.screen{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+h1{font-size:32px;margin-bottom:12px}
+p{line-height:1.6;color:#e5e7eb}
+button{
+  border:0;
+  border-radius:12px;
+  padding:14px 25px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.start{
+  margin-top:25px;
+  background:#22c55e;
+  color:white;
+}
+.projects{display:none}
+.card{
+  background:white;
+  color:#111827;
+  border-radius:18px;
+  padding:20px;
+  margin:18px 0;
+  box-shadow:0 8px 25px #0005;
+}
+.card h2{margin-top:0;color:#312e81}
+.card p{color:#374151}
+.select{
+  background:#2563eb;
+  color:white;
+  width:100%;
+  margin-top:10px;
+}
+.whatsapp{
+  display:none;
+  text-decoration:none;
+  background:#25D366;
+  color:white;
+  padding:15px 22px;
+  border-radius:12px;
+  font-weight:bold;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="screen" id="welcome">
+    <h1>Welcome to the Nitya Book Publication</h1>
+    <p>Choose your project and contact us on WhatsApp.</p>
+    <button class="start" onclick="showProjects()">GET START</button>
+  </div>
+
+  <div class="projects" id="projects">
+
+    <h1>Select Your Project</h1>
+
+    <div class="card">
+      <h2>Project 1</h2>
+      <p><b>50 pages book front and back</b></p>
+      <p>⏱ Timing duration: 7 days</p>
+      <p>💰 Payment ₹25,000/-<br>
+      ADVANCE 50% = ₹12,500/-</p>
+      <p>📝 Registration and Security Fees ₹499/-</p>
+      <button class="select" onclick="selectProject('Project 1')">
+        SELECT PROJECT 1
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Project 2</h2>
+      <p><b>100 pages book front and back</b></p>
+      <p>⏱ Timing duration: 10 days</p>
+      <p>💰 Payment ₹30,000/-<br>
+      ADVANCE 50% = ₹15,000/-</p>
+      <p>📝 Registration and Security Fees ₹850/-</p>
+      <button class="select" onclick="selectProject('Project 2')">
+        SELECT PROJECT 2
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Project 3</h2>
+      <p><b>150 pages of the book front and back</b></p>
+      <p>⏱ Timing duration: 15 days</p>
+      <p>💰 Payment ₹35,000/-<br>
+      ADVANCE 50% = ₹17,500/-</p>
+      <p>📝 Registration and Security Fees ₹1,050/-</p>
+      <button class="select" onclick="selectProject('Project 3')">
+        SELECT PROJECT 3
+      </button>
+    </div>
+
+    <a id="whatsapp" class="whatsapp" target="_blank">
+      💬 CONTACT ON WHATSAPP
+    </a>
+
+  </div>
+</div>
+
+<script>
+function showProjects(){
+  document.getElementById("welcome").style.display="none";
+  document.getElementById("projects").style.display="block";
+}
+
+function selectProject(project){
+  const message = "Hii SIR I NEED THIS JOB";
+  const phone = "919549206488";
+
+  document.getElementById("whatsapp").href =
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  document.getElementById("whatsapp").style.display="inline-block";
+}
+</script>
+
+</body>
+</html>
